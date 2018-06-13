@@ -5,7 +5,7 @@ This document contains instructions to setup the CounterApp.
 
 ## Setup Prerequisites
 * Install [exp CLI](https://docs.expo.io/versions/latest/workflow/exp-cli/)
-* Install [npm(https://www.npmjs.com/get-npm/)]. 
+* Install [npm](https://www.npmjs.com/get-npm/)
 
 ## Steps
 * Clone the repo
