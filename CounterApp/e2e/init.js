@@ -1,10 +1,13 @@
 const detox = require('detox');
 const config = require('../package.json').detox;
 
-before(async () => {
+// Set the default timeout
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 120000;
+
+beforeAll(async () => {
   await detox.init(config);
 });
 
-after(async () => {
+afterAll(async () => {
   await detox.cleanup();
 });

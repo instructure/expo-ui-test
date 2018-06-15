@@ -31,9 +31,9 @@ export default class App extends Component<Props> {
   render() {
       return (
         <View style={styles.container}>
-          <Button title="Increment" testID={"button.increment"} onPress={() => this.setState({ count: this.state.count + 1})} />
-          <Button title="Decrement" testID={"button.decrement"} onPress={() => this.setState({ count: this.state.count - 1})} />
-          <Text testID={"text.count"}>{this.state.count}</Text>
+          <Button title="Increment" testID={"increment"} onPress={() => this.setState({ count: this.state.count + 1})} />
+          <Button title="Decrement" testID={"decrement"} onPress={() => this.setState({ count: this.state.count - 1})} />
+          <Text testID={"count"}>{this.state.count}</Text>
         </View>
       );
   }
