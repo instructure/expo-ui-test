@@ -5,5 +5,23 @@
     "expo": "^27.0.1",
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz"
+  },
+  "devDependencies": {
+    "detox": "^7.4.3",
+    "detox-expo-helpers": "^0.2.0",
+    "mocha": "^5.2.0"
+  },
+  "detox": {
+    "test-runner": "mocha",
+    "specs": "e2e",
+    "runner-config": "e2e/config.json",
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/CounterApp.app",
+        "build": "xcodebuild -project ios/CounterApp.xcodeproj -scheme example -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone 8"
+      }
+    }
   }
 }
