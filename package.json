@@ -1,0 +1,30 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "react": "16.3.1",
+    "react-native": "0.54.2"
+  },
+  "devDependencies": {
+    "babel-jest": "^23.0.1",
+    "babel-preset-react-native": "^4.0.0",
+    "detox": "^7.4.3",
+    "jest": "^23.1.0",
+    "react-test-renderer": "^16.4.1"
+  },
+  "detox": {
+    "test-runner": "jest",
+    "specs": "e2e",
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/CounterApp.app",
+        "build": "xcodebuild -project ios/CounterApp.xcodeproj -scheme CounterApp -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone 8"
+      }
+    }
+  }
+}
