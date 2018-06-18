@@ -1,4 +1,4 @@
-describe('Example', () => {
+describe('counterapp', () => {
   beforeEach(async () => {
     await device.reloadReactNative()
   })
