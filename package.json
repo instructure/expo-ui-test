@@ -2,11 +2,14 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test:e2e:ios": "pushd detox/test && npm run e2e:ios && popd",
+    "test:e2e:android": "pushd detox/test && npm run e2e:android && popd",
+    "release": "node scripts/release.js"
   },
   "dependencies": {
     "react": "16.3.1",
-    "react-native": "0.54.2"
+    "react-native": "0.51.0"
   },
   "devDependencies": {
     "babel-jest": "^23.0.1",
@@ -30,6 +33,12 @@
         "build": "xcodebuild -project ios/CounterApp.xcodeproj -scheme CounterApp -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
         "type": "ios.simulator",
         "name": "iPhone 8"
+      },
+      "android.emu.debug": {
+        "binaryPath": "android/app/build/outputs/apk/minReactNative46/debug/app-minReactNative46-debug.apk",
+        "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd ..",
+        "type": "android.emulator",
+        "name": "Nexus_5X_API_24"
       }
     }
   }
